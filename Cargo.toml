@@ -2,6 +2,7 @@
 name = "tuner"
 version = "0.1.0"
 edition = "2024"
+repository = "https://github.com/bgroff/tuner-tui"
 
 [dependencies]
 cpal = "0.17"
@@ -10,3 +11,8 @@ ratatui = "0.30"
 crossterm = "0.29"
 crossbeam-channel = "0.5"
 clap = { version = "4.6", features = ["derive"] }
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
